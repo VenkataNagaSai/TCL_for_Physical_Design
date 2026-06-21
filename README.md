@@ -1,5 +1,650 @@
 # TCL_for_Physical_Design
 
+# Tcl for VLSI Physical Design
+
+---
+
+# Table of Contents
+
+* [Introduction](#introduction)
+* [Tcl Operators](#tcl-operators)
+* [Important Tcl Commands](#important-tcl-commands)
+* [Lists](#lists)
+* [Arrays](#arrays)
+* [String Operations](#string-operations)
+* [Procedures](#procedures)
+* [File Handling](#file-handling)
+* [Regular Expressions](#regular-expressions)
+* [Some Important Scripts](#interview-programming-questions)
+* [File Handling Scripts](#file-handling-interview-questions)
+* [List and Array Scripts](#list-and-array-interview-questions)
+* [Report Parsing](#report-parsing)
+* [Physical Design Tool Commands](#physical-design-tool-commands)
+* [Physical Design Tcl Scripts](#physical-design-tcl-scripts)
+* [ECO Automation Scripts](#eco-automation-scripts)
+* [Most Important Tcl Commands](#most-important-tcl-commands)
+
+---
+
+# Introduction
+
+Tcl is heavily used in:
+
+* Cadence Innovus
+* Synopsys ICC2
+* Synopsys PrimeTime
+* Cadence Tempus
+* Synopsys Fusion Compiler
+
+Common applications:
+
+* Timing report parsing
+* ECO automation
+* Collection handling
+* CTS automation
+* Placement checks
+* Routing checks
+* Design sanity checks
+* Batch automation
+
+---
+
+# Tcl Operators
+
+## Arithmetic Operators
+
+| Operator | Description    |
+| -------- | -------------- |
+| +        | Addition       |
+| -        | Subtraction    |
+| *        | Multiplication |
+| /        | Division       |
+| %        | Modulus        |
+| **       | Power          |
+
+```tcl
+set area [expr {$width * $height}]
+```
+
+---
+
+## Relational Operators
+
+| Operator | Description           |
+| -------- | --------------------- |
+| ==       | Equal                 |
+| !=       | Not Equal             |
+| >        | Greater Than          |
+| <        | Less Than             |
+| >=       | Greater Than or Equal |
+| <=       | Less Than or Equal    |
+
+```tcl
+if {$slack < 0} {
+    puts "Timing violation"
+}
+```
+
+---
+
+## Logical Operators
+
+| Operator | Description |   |    |
+| -------- | ----------- | - | -- |
+| &&       | AND         |   |    |
+|          |             |   | OR |
+| !        | NOT         |   |    |
+
+```tcl
+if {$setup_slack < 0 && $hold_slack < 0} {
+    puts "Both violations present"
+}
+```
+
+---
+
+## String Operators
+
+| Operator | Description |
+| -------- | ----------- |
+| eq       | Equal       |
+| ne       | Not Equal   |
+
+```tcl
+if {$cell_type eq "BUF"} {
+    puts "Buffer found"
+}
+```
+
+---
+
+## Membership Operators
+
+```tcl
+if {$pin_name in {"clk" "rst" "scan_en"}} {
+    puts "Special pin"
+}
+```
+
+```tcl
+if {$pin_name ni {"clk" "rst"}} {
+    puts "Normal pin"
+}
+```
+
+---
+
+## Ternary Operator
+
+```tcl
+set result [expr {$slack >= 0 ? "PASS" : "FAIL"}]
+```
+
+---
+
+# Important Tcl Commands
+
+## Variables
+
+```tcl
+set var 10
+puts $var
+unset var
+```
+
+## Arithmetic
+
+```tcl
+set area [expr {$width * $height}]
+```
+
+## If Else
+
+```tcl
+if {$slack < 0} {
+    puts "Violation"
+}
+```
+
+## Loops
+
+### For
+
+```tcl
+for {set i 1} {$i <= 10} {incr i} {
+    puts $i
+}
+```
+
+### While
+
+```tcl
+while {$count > 0} {
+    incr count -1
+}
+```
+
+### Foreach
+
+```tcl
+foreach cell $cell_list {
+    puts $cell
+}
+```
+
+---
+
+# Lists
+
+```tcl
+set cells {U1 U2 U3}
+```
+
+### Length
+
+```tcl
+llength $cells
+```
+
+### Access
+
+```tcl
+lindex $cells 0
+```
+
+### Append
+
+```tcl
+lappend cells U4
+```
+
+### Search
+
+```tcl
+lsearch $cells U2
+```
+
+### Sort
+
+```tcl
+lsort $cells
+```
+
+### Sort Integer
+
+```tcl
+lsort -integer $nums
+```
+
+### Reverse
+
+```tcl
+lreverse $list
+```
+
+### Remove Duplicates
+
+```tcl
+lsort -unique $list
+```
+
+---
+
+# Arrays
+
+```tcl
+array set slack {
+    path1 -0.1
+    path2 0.05
+}
+
+puts $slack(path1)
+```
+
+---
+
+# String Operations
+
+```tcl
+string length $name
+string compare $a $b
+string match *CLK* $pin
+string first CLK $pin
+```
+
+---
+
+# Procedures
+
+```tcl
+proc add {a b} {
+    return [expr {$a + $b}]
+}
+
+puts [add 10 20]
+```
+
+---
+
+# File Handling
+
+## Read File
+
+```tcl
+set fp [open report.rpt r]
+
+while {[gets $fp line] >= 0} {
+    puts $line
+}
+
+close $fp
+```
+
+## Copy File
+
+```tcl
+set in [open input.txt r]
+set out [open output.txt w]
+
+while {[gets $in line] >= 0} {
+    puts $out $line
+}
+
+close $in
+close $out
+```
+
+---
+
+# Regular Expressions
+
+## Extract Slack
+
+```tcl
+regexp {slack.*(-?\d+\.\d+)} $line match slack
+```
+
+## Find Violations
+
+```tcl
+if {[regexp {VIOLATED} $line]} {
+    puts $line
+}
+```
+
+---
+
+# Interview Programming Questions
+
+## Even Numbers
+
+```tcl
+for {set i 1} {$i <= 100} {incr i} {
+    if {$i % 2 == 0} {
+        puts $i
+    }
+}
+```
+
+## Odd Numbers
+
+```tcl
+for {set i 1} {$i <= 100} {incr i} {
+    if {$i % 2 != 0} {
+        puts $i
+    }
+}
+```
+
+## Prime Numbers
+
+```tcl
+for {set num 2} {$num <= 100} {incr num} {
+
+    set prime 1
+
+    for {set i 2} {$i < $num} {incr i} {
+        if {$num % $i == 0} {
+            set prime 0
+            break
+        }
+    }
+
+    if {$prime} {
+        puts $num
+    }
+}
+```
+
+## Factorial
+
+```tcl
+proc factorial {n} {
+
+    set fact 1
+
+    for {set i 1} {$i <= $n} {incr i} {
+        set fact [expr {$fact * $i}]
+    }
+
+    return $fact
+}
+```
+
+## Fibonacci
+
+```tcl
+set a 0
+set b 1
+
+for {set i 1} {$i <= 10} {incr i} {
+
+    puts $a
+
+    set temp [expr {$a + $b}]
+    set a $b
+    set b $temp
+}
+```
+
+## Palindrome
+
+```tcl
+if {$str eq [string reverse $str]} {
+    puts "Palindrome"
+}
+```
+
+---
+
+# Report Parsing
+
+## Extract Slack
+
+```tcl
+regexp {slack.*(-?\d+\.\d+)} $line match slack
+```
+
+## Extract WNS
+
+```tcl
+regexp {WNS:\s*(-?\d+\.\d+)} $line match wns
+```
+
+## Extract TNS
+
+```tcl
+regexp {TNS:\s*(-?\d+\.\d+)} $line match tns
+```
+
+## Extract Startpoint
+
+```tcl
+regexp {Startpoint:\s+(\S+)} $line match start
+```
+
+## Extract Endpoint
+
+```tcl
+regexp {Endpoint:\s+(\S+)} $line match end
+```
+
+## Count Violations
+
+```tcl
+if {[regexp {VIOLATED} $line]} {
+    incr count
+}
+```
+
+---
+
+# Physical Design Tool Commands
+
+```tcl
+get_cells *
+get_pins *
+get_nets *
+get_ports *
+get_clocks *
+```
+
+### Iterate Collections
+
+```tcl
+foreach_in_collection cell [get_cells *] {
+    puts $cell
+}
+```
+
+### Attributes
+
+```tcl
+get_attribute $cell ref_name
+get_attribute $cell area
+```
+
+### Filter Sequential Cells
+
+```tcl
+get_cells -filter "is_sequential==true"
+```
+
+---
+
+# Physical Design Tcl Scripts
+
+## Count Cells
+
+```tcl
+set count [sizeof_collection [get_cells *]]
+puts $count
+```
+
+## Sequential Cells
+
+```tcl
+foreach_in_collection cell \
+[get_cells -filter "is_sequential==true"] {
+
+    puts [get_object_name $cell]
+}
+```
+
+## High Fanout Nets
+
+```tcl
+foreach_in_collection net [get_nets *] {
+
+    set fanout \
+    [sizeof_collection [all_fanout -flat -from $net]]
+
+    if {$fanout > 100} {
+        puts [get_object_name $net]
+    }
+}
+```
+
+## Floating Nets
+
+```tcl
+foreach_in_collection net [get_nets *] {
+
+    if {[sizeof_collection [all_connected $net]] < 2} {
+        puts [get_object_name $net]
+    }
+}
+```
+
+## Unconnected Ports
+
+```tcl
+foreach_in_collection port [get_ports *] {
+
+    if {[sizeof_collection [all_connected $port]] == 0} {
+        puts [get_object_name $port]
+    }
+}
+```
+
+---
+
+# ECO Automation Scripts
+
+## Generate ECO Tcl
+
+```tcl
+set fp [open eco.tcl w]
+
+puts $fp "size_cell U123 BUF_X4"
+
+close $fp
+```
+
+## Generate Buffer ECO
+
+```tcl
+set fp [open eco_buf.tcl w]
+
+foreach_in_collection net [get_nets *] {
+
+    set fanout [sizeof_collection \
+        [all_fanout -flat -from $net]]
+
+    if {$fanout > 50} {
+        puts $fp "insert_buffer [get_object_name $net]"
+    }
+}
+
+close $fp
+```
+
+---
+
+# Most Important Tcl Commands
+
+* set
+* puts
+* expr
+* if
+* foreach
+* for
+* while
+* proc
+* return
+* llength
+* lindex
+* lappend
+* lsearch
+* lsort
+* array
+* regexp
+* open
+* gets
+* close
+* string match
+* foreach_in_collection
+* get_cells
+* get_pins
+* get_nets
+* get_ports
+* get_attribute
+* get_clocks
+* all_fanout
+* all_connected
+
+---
+
+# My Scripts
+
+1. Prime Numbers
+2. Factorial Using Proc
+3. Fibonacci Series
+4. Palindrome
+5. Reverse String
+6. Even Numbers
+7. Odd Numbers
+8. Count Lines in File
+9. Count Words in File
+10. Count Blank Lines
+11. Remove Duplicate Lines
+12. Sort Numbers
+13. Maximum Number
+14. Frequency Count
+15. Extract Slack
+16. Extract WNS/TNS
+17. Count Violations
+18. Sequential Cell Listing
+19. High Fanout Nets
+20. Floating Nets
+21. ECO Script Generation
+22. Count Buffers
+23. Count Registers
+24. List Macros
+25. List Dont-Touch Cells
+
+---
+
 # MY COMPLETE TCL NOTES FOR VLSI PHYSICAL DESIGN
 
 ## Contents
