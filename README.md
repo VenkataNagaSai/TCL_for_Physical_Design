@@ -53,12 +53,12 @@ Common applications:
 
 | Operator | Description    | Example |
 | -------- | -------------- | ------- |
-| +        | Addition       | $a + $b |
-| -        | Subtraction    | $a - $b |
-| *        | Multiplication | $a * $b |
-| /        | Division       | $a / $b |
-| %        | Modulus        | $a % 2  |
-| **       | Power          | $a ** 2 |
+| +        | Addition       | expr {$a + $b} |
+| -        | Subtraction    | expr {$a - $b} |
+| *        | Multiplication | expr {$a * $b} |
+| /        | Division       | expr {$a / $b} |
+| %        | Modulus        | expr {$a % 2}  |
+| **       | Power          | expr {$a ** 2} |
 
 ```tcl
 set width 10
