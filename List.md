@@ -16,7 +16,7 @@
 
 ## 1. List Append
 
-Appends elements at the end (change is made in the parent varibale, so we should not use $)
+Appends elements at the end (change is made in the parent varibale, so we should not use $a)
 
 
 #### Example
@@ -81,7 +81,7 @@ Gives the element at the particular index.
 #### Example
 ```tcl
 set a [list ASIC Physical Design Engineer]
-set b [list $a 2]
+set b [lindex $a 2]
 puts $b
 ```
 
@@ -97,18 +97,18 @@ Inserts one or more elements at a particular index.
 
 #### Example
 ```tcl
-set a [list I am an ASIC Design Engineer]
-set b [linsert $a 3 Physical]
+set a [list I am Design Engineer]
+set b [linsert $a 2 Physical]
 puts $b
 
-set c [linsert $a 2 a very good]
+set c [linsert $a 2 an ASIC Physical]
 puts $c
 ```
 
 #### Output
 ```text
+I am Physical Design Engineer
 I am an ASIC Physical Design Engineer
-I am a very good ASIC Physical Design Engineer
 ```
 
 ## 6. List Length
@@ -158,7 +158,7 @@ Replaces elements in the index range with the new elements specified.
 #### Example
 ```tcl
 set a [list I am an ASIC RTL Verification Engineer]
-set b [lreplace $a 3 4 Physical Design]
+set b [lreplace $a 4 5 Physical Design]
 puts $b
 ```
 
@@ -169,14 +169,14 @@ I am an ASIC Physical Design Engineer
 
 ## 9. List Set
 
-Set a particular index with the new element
+Set a particular index with the new element (change is made in the parent varibale, so we should not use $a)
 
 
 #### Example
 ```tcl
 set a [list I am an ASIC RTL Design Engineer]
-set b [lset $a 4 Physical]
-puts $b
+lset a 4 Physical
+puts $a
 ```
 
 #### Output
@@ -215,7 +215,7 @@ puts $d
 
 #### Output
 ```text
-45 126 223 12345
+12345 126 223 45
 ```
 
 ### 10b. lsort -dictionary
@@ -243,7 +243,7 @@ Sorts according to Numerical value
 #### Example
 ```tcl
 set c [list 126 12345 223 45]
-set d [list -integer $c]
+set d [lsort -integer $c]
 puts $d
 ```
 
@@ -276,6 +276,18 @@ Sorts according to Numerical value and displays unique occurences
 
 #### Example
 ```tcl
+set a [list I am an ASIC Physical am Engineer an I ASIC]
+set b [lsort -dictionary -unique $a]
+puts $b
+```
+
+#### Output
+```text
+45 67 126 223 12345
+```
+
+#### Example
+```tcl
 set c [list 126 12345 223 45 126 67 45]
 set d [lsort -integer -unique $c]
 puts $d
@@ -283,7 +295,7 @@ puts $d
 
 #### Output
 ```text
-45 67 126 223 445 12345
+45 67 126 223 12345
 ```
 
 ## 11. List Split
@@ -293,7 +305,7 @@ Splits into elements of a list based on a particular reference character
 #### Example
 ```tcl
 set a [list I_am_an_ASIC_Physical_Design_Engineer]
-set b [split $a "-"]
+set b [split $a "_"]
 puts $b
 ```
 
