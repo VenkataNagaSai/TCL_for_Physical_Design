@@ -1,21 +1,25 @@
-# List Operators:
+# List Operators
 
 ## Table of Contents
 
-- [1. List Append:](#list-append)
-- [2. List Assign:](#list-assign)
-- [3. List Concat:](#list-concat)
-- [4. List Index:](#list-index)
-- [5. List Insert:](#list-insert)
-- [6. List Length:](#list-length)
-- [7. List Range:](#list-range)
-- [8. List Replace:](#list-replace)
-- [9. List Set:](#list-set)
-- [10. List Sort:](#list-sort)
-- [11. List Split:](#list-split)
+- [1. List Append](#1-list-append)
+- [2. List Assign](#2-list-assign)
+- [3. List Concat](#3-list-concat)
+- [4. List Index](#4-list-index)
+- [5. List Insert](#5-list-insert)
+- [6. List Length](#6-list-length)
+- [7. List Range](#7-list-range)
+- [8. List Replace](#8-list-replace)
+- [9. List Set](#9-list-set)
+- [10. List Sort](#10-list-sort)
+  - [10a. lsort ](#10a-lsort-)
+  - [10b. lsort -dictionary](#10b-lsort-dictionary)
+  - [10c. lsort -integer](#10c-lsort-integer)
+  - [10d. lsort -real](#10d-lsort-real)
+  - [10e. lsort -unique](#10e-lsort-unique)
+- [11. List Split](#11-list-split)
 
-
-## 1. List Append:
+## 1. List Append
 
 Appends elements at the end (change is made in the parent varibale, so we should not use $)
 
@@ -35,7 +39,7 @@ I am an ASIC Physical Design Engineer
 
 ```
 
-## 2. List Assign:
+## 2. List Assign
 
 To assign successive elements of a list with specified variables.
 
@@ -60,7 +64,7 @@ Design
 
 ```
 
-## 3. List Concat:
+## 3. List Concat
 
 To combine lists, It merges two or more lists in specified order into a single list.
 
@@ -80,7 +84,7 @@ I am an ASIC Physical Design Engineer
 
 ```
 
-## 4. List Index:
+## 4. List Index
 
 Gives the element at the particular index.
 
@@ -99,7 +103,7 @@ Design
 
 ```
 
-## 5. List Insert:
+## 5. List Insert
 
 Inserts one or more elements at a particular index.
 
@@ -122,7 +126,7 @@ I am a very good ASIC Physical Design Engineer
 
 ```
 
-## 6. List Length:
+## 6. List Length
 
 Gives the length of the list.
 
@@ -145,7 +149,7 @@ puts $b
 1
 ```
 
-## 7. List Range:
+## 7. List Range
 
 It will return one or moore adjacent elements from a list depending on the specified index range.
 
@@ -164,7 +168,7 @@ ASIC Physical Design
 
 ```
 
-## 8. List Replace:
+## 8. List Replace
 
 Replaces elements in the index range with the new elements specified.
 
@@ -183,7 +187,7 @@ I am an ASIC Physical Design Engineer
 
 ```
 
-## 9. List Set:
+## 9. List Set
 
 Set a particular index with the new element
 
@@ -201,7 +205,7 @@ I am an ASIC Physical Design Engineer
 
 ```
 
-## 10. List Sort:
+## 10. List Sort
 
 Sorts elements in particular order
 
@@ -315,7 +319,7 @@ puts $d
 
 ```
 
-## 11. List Split:
+## 11. List Split
 Splits into elements of a list based on a particular reference character
 
 
