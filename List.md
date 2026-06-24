@@ -16,12 +16,12 @@
 
 ## 1. List Append
 
-Appends elements at the end (change is made in the parent varibale, so we should not use $a)
+Appends elements at the end (change is made in the parent variable, so we should not use $a).
 
 
 #### Example
 ```tcl
-set a [list I am ASIC Physical Design]
+set a [list I am an ASIC Physical Design]
 lappend a Engineer
 puts $a
 ```
@@ -135,7 +135,7 @@ puts $b
 
 ## 7. List Range
 
-It will return one or moore adjacent elements from a list depending on the specified index range.
+It will return one or more adjacent elements from a list depending on the specified index range.
 
 
 #### Example
@@ -169,7 +169,7 @@ I am an ASIC Physical Design Engineer
 
 ## 9. List Set
 
-Set a particular index with the new element (change is made in the parent varibale, so we should not use $a)
+Set a particular index with the new element (change is made in the parent variable, so we should not use $a).
 
 
 #### Example
@@ -186,12 +186,12 @@ I am an ASIC Physical Design Engineer
 
 ## 10. List Sort
 
-Sorts elements in particular order
+Sorts elements in particular order.
 
 
 ### 10a. lsort 
 
-Sorts according to ASCII value
+Sorts according to ASCII value.
 
 
 #### Example
@@ -220,7 +220,7 @@ puts $d
 
 ### 10b. lsort -dictionary
 
-Sorts according to Alphabetical value
+Sorts according to Alphabetical value.
 
 
 #### Example
@@ -237,7 +237,7 @@ am an ASIC Design Engineer I Physical
 
 ### 10c. lsort -integer
 
-Sorts according to Numerical value
+Sorts according to Numerical value.
 
 
 #### Example
@@ -254,7 +254,7 @@ puts $d
 
 ### 10d. lsort -real
 
-Sorts decimal numbers according to Numerical value
+Sorts decimal numbers according to Numerical value.
 
 
 #### Example
@@ -271,8 +271,20 @@ puts $d
 
 ### 10e. lsort -unique
 
-Sorts according to Numerical value and displays unique occurences
+Sorts according to ASCII or Alphabetical or Numerical value as specified and displays unique occurences.
 
+
+#### Example
+```tcl
+set a [list I am an ASIC Physical am Engineer an I ASIC]
+set b [lsort -unique $a]
+puts $b
+```
+
+#### Output
+```text
+ASIC Engineer I Physical am an
+```
 
 #### Example
 ```tcl
@@ -283,7 +295,7 @@ puts $b
 
 #### Output
 ```text
-45 67 126 223 12345
+am an ASIC Engineer I Physical
 ```
 
 #### Example
@@ -299,7 +311,7 @@ puts $d
 ```
 
 ## 11. List Split
-Splits into elements of a list based on a particular reference character
+Splits into elements of a list based on a particular reference character.
 
 
 #### Example
