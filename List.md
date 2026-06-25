@@ -1,9 +1,11 @@
-# List
+# List in TCL
 
 ## Table of Contents
 
 **[List](#list)**
+
 **[Methods of representing List](#methods-of-representing-list)**
+
 **[List Operators](#list-operators)**
 
 - [1. List Append](#1-list-append)
