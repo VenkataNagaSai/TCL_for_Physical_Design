@@ -23,6 +23,7 @@
 
 ## [Special Characters in the String](#special-characters-in-the-string)
 
+---
 ## String Operators
 
 ### 1. String Append
