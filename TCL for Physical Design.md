@@ -26,7 +26,7 @@
 - [Physical Design Tool Commands](#physical-design-tool-commands)
 - [Physical Design Tcl Scripts](#physical-design-tcl-scripts)
 - [ECO Automation Scripts](#eco-automation-scripts)
-- [Most Important Tcl Commands Used in PD](#most-important-tcl-commands)
+- [Most Important Tcl Commands Used in PD](#most-important-tcl-commands-used-in-pd)
 
 ## TCL Introduction
 
