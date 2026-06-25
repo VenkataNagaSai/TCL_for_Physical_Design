@@ -1,8 +1,8 @@
 # String
 
-## String Operators
-
 ## Table of Contents
+
+## String Operators
 
 - [1. String Append](#1-string-append)
 - [2. String Compare](#2-string-compare)
@@ -20,7 +20,8 @@
 - [14. String Trim](#14-string-trim)
 - [15. String Wordend](#15-string-wordend)
 - [16. String Wordstart](#16-string-wordstart)
-- [Special Characters in the String](#special-characters-in-the-string)
+
+## [Special Characters in the String](#special-characters-in-the-string)
 
 ## 1. String Append
 
@@ -370,10 +371,10 @@ puts [string wordstart $string1 11]
 
 | Char | Description          |
 | ---- | -------------------- |
-| \'   | print a single quote |
-| \"   | print a double quote |
-| \\   | print a backslash    |
-| \?   | print a ?            |
+| \\'  | print a single quote |
+| \\"  | print a double quote |
+| \\\  | print a backslash    |
+| \\?  | print a ?            |
 | \a   | alert bell           |
 | \n   | new line             |
 | \t   | tab space            |
