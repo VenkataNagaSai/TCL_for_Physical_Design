@@ -4,7 +4,7 @@
 
 - [TCL Introduction](#tcl-introduction)
 - [Variable Handling](#variable-handling)
-- [Tcl Operators](#tcl-operators)
+- [TCL Operators](#tcl-operators)
 - [Special Variables](#special-variables)
 - [Control Structure](#data-structure)
   - [Conditional Statement](#conditional-statement)
@@ -24,13 +24,13 @@
 - [Regular Expression](#regular-expression)
 - [Report Parsing](#report-parsing)
 - [Physical Design Tool Commands](#physical-design-tool-commands)
-- [Physical Design Tcl Scripts](#physical-design-tcl-scripts)
+- [Physical Design TCL Scripts](#physical-design-tcl-scripts)
 - [ECO Automation Scripts](#eco-automation-scripts)
-- [Most Important Tcl Commands Used in PD](#most-important-tcl-commands-used-in-pd)
+- [Most Important TCL Commands Used in PD](#most-important-tcl-commands-used-in-pd)
 
 ## TCL Introduction
 
-Tcl is heavily used in:
+TCL is heavily used in:
 
 * Cadence Innovus
 * Synopsys ICC2
@@ -67,7 +67,7 @@ set count [llength $cells]
 
 The command inside [ ] executes first.
 
-## Tcl Operators
+## TCL Operators
 
 Used for: Area calculations, percentages, coordinates.
 
@@ -451,7 +451,7 @@ get_attribute $cell area
 get_cells -filter "is_sequential==true"
 ```
 
-## Physical Design Tcl Scripts
+## Physical Design TCL Scripts
 
 ### Count Cells
 
@@ -508,7 +508,7 @@ foreach_in_collection port [get_ports *] {
 
 ## ECO Automation Scripts
 
-### Generate ECO Tcl
+### Generate ECO TCL
 
 ```tcl
 set fp [open eco.tcl w]
@@ -536,7 +536,7 @@ foreach_in_collection net [get_nets *] {
 close $fp
 ```
 
-## Most Important Tcl Commands Used in PD
+## Most Important TCL Commands Used in PD
 
 * set
 * puts
@@ -567,31 +567,3 @@ close $fp
 * get_clocks
 * all_fanout
 * all_connected
-
-## My Scripts
-
-1. Prime Numbers (2-100)
-2. Factorial Using Proc
-3. Fibonacci Series
-4. Palindrome Check
-5. Reverse String
-6. Even Numbers
-7. Odd Numbers
-8. Count Lines in File
-9. Count Words in File
-10. Count Blank Lines
-11. Remove Duplicate Lines
-12. Sort Numbers
-13. Maximum Number
-14. Frequency Count
-15. Extract Slack
-16. Extract WNS/TNS
-17. Count Violations
-18. Sequential Cell Listing
-19. High Fanout Nets
-20. Floating Nets
-21. ECO Script Generation
-22. Count Buffers
-23. Count Registers
-24. List Macros
-25. List Dont-Touch Cells
