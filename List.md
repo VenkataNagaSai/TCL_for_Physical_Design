@@ -1,12 +1,12 @@
 # List
 
-Similar to arrays. Lists are collection of items. Items can be either strings or real numbers or integers.
+Similar to arrays. Lists are collection of items. Items can be either strings (or) real numbers (or) integers.
 
 ## Methods of representing List
 
-- [set a "I am an ASIC Physical Design Engineer"]
-- [set a {I am an ASIC Physical Design Engineer}]
-- [set a [list I am an ASIC Physical Design Engineer]]
+- set a "I am an ASIC Physical Design Engineer"
+- set a {I am an ASIC Physical Design Engineer}
+- set a [list I am an ASIC Physical Design Engineer]
 
 
 #### Example
