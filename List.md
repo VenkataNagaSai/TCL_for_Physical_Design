@@ -52,17 +52,17 @@ I am an ASIC Physical Design Engineer
 
 ## Table of Contents
 
-- [1. List Append](#1-list-append)
-- [2. List Assign](#2-list-assign)
-- [3. List Concat](#3-list-concat)
-- [4. List Index](#4-list-index)
-- [5. List Insert](#5-list-insert)
-- [6. List Length](#6-list-length)
-- [7. List Range](#7-list-range)
-- [8. List Replace](#8-list-replace)
-- [9. List Set](#9-list-set)
-- [10. List Sort](#10-list-sort)
-- [11. List Split](#11-list-split)
+[1. List Append](#1-list-append)
+[2. List Assign](#2-list-assign)
+[3. List Concat](#3-list-concat)
+[4. List Index](#4-list-index)
+[5. List Insert](#5-list-insert)
+[6. List Length](#6-list-length)
+[7. List Range](#7-list-range)
+[8. List Replace](#8-list-replace)
+[9. List Set](#9-list-set)
+[10. List Sort](#10-list-sort)
+[11. List Split](#11-list-split)
 
 ## 1. List Append
 
