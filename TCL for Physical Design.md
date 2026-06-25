@@ -211,7 +211,7 @@ foreach cell $cell_list {
     puts $cell
 }
 ```
-### Procedure (Function)
+## Procedure (Function)
 
 ```tcl
 proc add {a b} {
