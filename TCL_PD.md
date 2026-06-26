@@ -23,7 +23,7 @@
 - [11. File Handling](#11-file-handling)
 - [12. Procedures](#12-procedures)
 - [13. Expressions](#13-expressions)
-- [14. Useful Built-in Math Functions](#14-useful-builtin-math-functions)
+- [14. Useful Built in Math Functions](#14-useful-built-in-math-functions)
 - [15. Formatting](#15-formatting)
 - [16. Time Commands](#16-time-commands)
 - [17. Information Commands](#17-information-commands)
@@ -32,15 +32,15 @@
 - [20. Package Commands](#20-package-commands)
 - [21. Report Parsing](#21-report-parsing)
 - [22. Common Tcl Scripts in Physical Design](#22-common-tcl-scripts-in-physical-design)
-- [23. Synopsys/Cadence Collection Commands](#23-synopsyscadence-collection-commands)
+- [23. Synopsys Cadence Collection Commands](#23-synopsys-cadence-collection-commands)
 - [24. Most Used Physical Design Commands](#24-most-used-physical-design-commands)
 - [25. File Search Utilities](#25-file-search-utilities)
 - [26. Linux Commands Used Inside Tcl](#26-linux-commands-used-inside-tcl)
 - [27. Advanced Tcl](#27-advanced-tcl)
 - [28. General Programs](#28-general-programs)
 - [29. Physical Design Report Parsing Questions](#29-physical-design-report-parsing-questions)
-- [30. Tool-Specific Tcl Knowledge](#30-toolspecific-tcl-knowledge)
-- [High-Priority Topics for Physical Design](#highpriority-topics-for-physical-design)
+- [30. Tool Specific Tcl Knowledge](#30-tool-specific-tcl-knowledge)
+- [High Priority Topics for Physical Design](#high-priority-topics-for-physical-design)
 
 ## 1. Tcl Basics
 
@@ -306,7 +306,7 @@ Always use
 expr {$a+$b}
 ```
 
-## 14. Useful Built-in Math Functions
+## 14. Useful Built in Math Functions
 
 ```tcl
 abs()
@@ -413,7 +413,7 @@ source
 * Parse Innovus reports
 * Parse ICC2 reports
 
-## 23. Synopsys/Cadence Collection Commands
+## 23. Synopsys Cadence Collection Commands
 
 ```tcl
 sizeof_collection
@@ -536,7 +536,7 @@ exec grep slack timing.rpt
 * Find IR-drop violations
 * Find EM violations
 
-## 30. Tool-Specific Tcl Knowledge
+## 30. Tool Specific Tcl Knowledge
 
 For Synopsys tools (ICC2, PrimeTime, Fusion Compiler):
 
@@ -555,7 +555,7 @@ For Cadence tools (Innovus, Tempus):
 * Placement and routing automation
 * Timing and DRC report extraction
 
-## High-Priority Topics for Physical Design
+## High Priority Topics for Physical Design
 
 1. Variables, expressions, and operators
 2. Conditions and loops
