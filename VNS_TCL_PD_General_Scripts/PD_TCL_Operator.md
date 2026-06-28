@@ -2,7 +2,7 @@
 
 Used for Area calculations, percentages, coordinates.
 
-## Arithmetic Operators
+## Arithmetic Operator
 
 | Operator | Description    | Example |
 | -------- | -------------- | ------- |
@@ -21,7 +21,7 @@ set area [expr {$width * $height}]
 puts $area
 ```
 
-## Relational Operators
+## Relational Operator
 
 Used in if, while, and filtering conditions.
 
@@ -40,7 +40,7 @@ if {$slack < 0} {
 }
 ```
 
-## Logical Operators
+## Logical Operator
 
 | Operator | Description |
 | -------- | ----------- |
@@ -54,7 +54,7 @@ if {$setup_slack < 0 && $hold_slack < 0} {
 }
 ```
 
-## String Comparision Operators
+## String Comparision Operator
 
 | Operator | Description |
 | -------- | ----------- |
@@ -72,7 +72,7 @@ Preferred Over:
 if {$cell_type == "BUF"} ;# Avoid
 ```
 
-## Membership Operators
+## Membership Operator
 
 ### in
 
