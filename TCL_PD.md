@@ -1,6 +1,8 @@
 # TCL for Physical Design
 
-## Table of Contents
+<a id="top"></a>
+
+## Contents
 
 - [Tcl Introduction](#tcl-introduction)
 - [Operators](#operators)
@@ -97,7 +99,7 @@ set height 200
 puts "Area = [expr {$width*$height}]"
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Operators
 
@@ -150,7 +152,7 @@ string compare
 string equal
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Conditional Statement
 
@@ -189,7 +191,7 @@ switch $a {
 }
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Loop
 
@@ -224,7 +226,7 @@ continue
 return
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## String
 
@@ -266,7 +268,7 @@ split
 concat
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Array
 
@@ -305,7 +307,8 @@ regexp {slack\s+(-?\d+\.\d+)} $line
 ```
 Gives slack
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## File Handling
 
@@ -334,7 +337,7 @@ while {[gets $fp line] >=0} {
 close $fp
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Procedure
 
@@ -366,7 +369,7 @@ Always use
 expr {$a+$b}
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Useful Built in Math Functions
 
@@ -399,7 +402,7 @@ scan
 binary
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Time Commands
 
@@ -436,7 +439,8 @@ catch
 error
 try
 ```
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Package Commands
 
@@ -479,7 +483,8 @@ source
 * Parse Innovus reports
 * Parse ICC2 reports
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Synopsys and Cadence Collection Commands
 
@@ -530,7 +535,7 @@ set count [sizeof_collection [get_cells *]]
 puts $count
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Most Used Physical Design Commands
 
@@ -572,7 +577,7 @@ cd
 exec
 ```
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Linux Commands Used Inside Tcl
 
@@ -605,7 +610,8 @@ exec grep slack timing.rpt
 * Variable scope
 * Namespaces
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## General Programs
 
@@ -644,7 +650,8 @@ exec grep slack timing.rpt
 * Find IR-drop violations
 * Find EM violations
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
 
 ## Tool Specific Tcl Knowledge
 
@@ -665,19 +672,20 @@ For Cadence tools (Innovus, Tempus):
 * Placement and routing automation
 * Timing and DRC report extraction
 
-## Very useful TCL Topics for Physical Design
+## Very Useful TCL Topics for Physical Design
 
-1. Variables, expressions, and operators
-2. Conditions and loops
-3. Lists and arrays
-4. Strings and regular expressions
-5. File handling
-6. Procedures
-7. Report parsing (`regexp`, `split`, `lindex`)
-8. Linux command integration (`exec`)
-9. Synopsys collection commands (`foreach_in_collection`, `sizeof_collection`)
-10. Tool commands (`get_cells`, `get_pins`, `get_nets`, `report_timing`, `get_attribute`)
-11. Timing, DRC, and QoR automation scripts
-12. Practical report-parsing and debugging exercises
+* Variables, expressions, and operators
+* Conditions and loops
+* Lists and arrays
+* Strings and regular expressions
+* File handling
+* Procedures
+* Report parsing (`regexp`, `split`, `lindex`)
+* Linux command integration (`exec`)
+* Synopsys collection commands (`foreach_in_collection`, `sizeof_collection`)
+* Tool commands (`get_cells`, `get_pins`, `get_nets`, `report_timing`, `get_attribute`)
+* Timing, DRC, and QoR automation scripts
+* Practical report-parsing and debugging exercises
 
-⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+<p align="right">(<a href="#top">⬆️ Back to Contents</a>)</p>
