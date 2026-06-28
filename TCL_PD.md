@@ -2,47 +2,40 @@
 
 ## Table of Contents
 
-- [1. Tcl Introduction and Basics](#1-tcl-introduction-and-basics)
-- [2. Operators](#2-operators)
-  - [Arithmetic](#arithmetic)
-  - [Comparison](#comparison)
-  - [Logical](#logical)
-  - [Bitwise](#bitwise)
-  - [String operator](#string-operator)
-- [3. Conditional Statement](#3-conditional-statement)
-- [4. Loop](#4-loop)
-  - [for](#for)
-  - [while](#while)
-  - [foreach](#foreach)
-- [5. Loop Control](#5-loop-control)
-- [6. String](#6-string)
-- [7. List](#7-list)
-- [8. Array](#8-array)
-- [9. Dictionary](#9-dictionary)
-- [10. Regular Expression](#10-regular-expression)
-- [11. File Handling](#11-file-handling)
-- [12. Procedure](#12-procedure)
-- [13. Expression](#13-expression)
-- [14. Useful Built in Math Functions](#14-useful-built-in-math-functions)
-- [15. Formatting](#15-formatting)
-- [16. Time Commands](#16-time-commands)
-- [17. Information Commands](#17-information-commands)
-- [18. Namespace Commands](#18-namespace-commands)
-- [19. Error Handling](#19-error-handling)
-- [20. Package Commands](#20-package-commands)
-- [21. Report Parsing](#21-report-parsing)
-- [22. Common Tcl Scripts in Physical Design](#22-common-tcl-scripts-in-physical-design)
-- [23. Synopsys and Cadence Collection Commands](#23-synopsys-and-cadence-collection-commands)
-- [24. Most Used Physical Design Commands](#24-most-used-physical-design-commands)
-- [25. File Search Utilities](#25-file-search-utilities)
-- [26. Linux Commands Used Inside Tcl](#26-linux-commands-used-inside-tcl)
-- [27. Advanced Tcl](#27-advanced-tcl)
-- [28. General Programs](#28-general-programs)
-- [29. Physical Design Report Parsing Questions](#29-physical-design-report-parsing-questions)
-- [30. Tool Specific Tcl Knowledge](#30-tool-specific-tcl-knowledge)
-- [High Priority Topics for Physical Design](#high-priority-topics-for-physical-design)
+- [Tcl Introduction](#tcl-introduction)
+- [Operators](#operators)
+- [Conditional Statement](#conditional-statement)
+- [Loop](#loop)
+- [Loop Control](#loop-control)
+- [String](#string)
+- [List](#list)
+- [Array](#array)
+- [Dictionary](#dictionary)
+- [Regular Expression](#regular-expression)
+- [File Handling](#file-handling)
+- [Procedure](#procedure)
+- [Expression](#expression)
+- [Useful Built in Math Functions](#useful-built-in-math-functions)
+- [Formatting](#formatting)
+- [Time Commands](#time-commands)
+- [Information Commands](#information-commands)
+- [Namespace Commands](#namespace-commands)
+- [Error Handling](#error-handling)
+- [Package Commands](#package-commands)
+- [Report Parsing](#report-parsing)
+- [Common Tcl Scripts in Physical Design](#common-tcl-scripts-in-physical-design)
+- [Synopsys and Cadence Collection Commands](#synopsys-and-cadence-collection-commands)
+- [Most Used Physical Design Commands](#most-used-physical-design-commands)
+- [Attribute PD Examples](#attribute-pd-examples)
+- [File Search Utilities](#file-search-utilities)
+- [Linux Commands Used Inside Tcl](#linux-commands-used-inside-tcl)
+- [Advanced Tcl](#advanced-tcl)
+- [General Programs](#general-programs)
+- [Physical Design Report Parsing Questions](#physical-design-report-parsing-questions)
+- [Tool Specific Tcl Knowledge](#tool-specific-tcl-knowledge)
+- [Very useful TCL Topics for Physical Design](#very-useful-tcl-topics-for-physical-design)
 
-## 1. Tcl Introduction and Basics
+## Tcl Introduction
 
 TCL is heavily used in many EDA tools like
 
@@ -104,7 +97,9 @@ set height 200
 puts "Area = [expr {$width*$height}]"
 ```
 
-## 2. Operators
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Operators
 
 ### Arithmetic
 
@@ -155,7 +150,9 @@ string compare
 string equal
 ```
 
-## 3. Conditional Statement
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Conditional Statement
 
 ### if-elseif-else Statement
 
@@ -192,7 +189,9 @@ switch $a {
 }
 ```
 
-## 4. Loop
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Loop
 
 ### for
 
@@ -217,14 +216,17 @@ foreach cell $cells {
     }
 ```
 
-## 5. Loop Control
+## Loop Control
 
 ```tcl
 break
 continue
 return
 ```
-## 6. String
+
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## String
 
 ``` tcl
 string length
@@ -247,7 +249,7 @@ string match
 string match "*DFF*" $cell
 ```
 
-## 7. List
+## List
 
 ``` tcl
 list
@@ -264,7 +266,9 @@ split
 concat
 ```
 
-## 8. Array
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Array
 
 ```tcl
 array set
@@ -275,7 +279,7 @@ array size
 array unset
 ```
 
-## 9. Dictionary
+## Dictionary
 
 ``` tcl
 dict create
@@ -286,7 +290,7 @@ dict keys
 dict values
 ```
 
-## 10. Regular Expression
+## Regular Expression
 
 ```tcl
 regexp
@@ -301,7 +305,9 @@ regexp {slack\s+(-?\d+\.\d+)} $line
 ```
 Gives slack
 
-## 11. File Handling
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## File Handling
 
 ```tcl
 open
@@ -328,7 +334,9 @@ while {[gets $fp line] >=0} {
 close $fp
 ```
 
-## 12. Procedure
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Procedure
 
 ```tcl
 proc
@@ -346,7 +354,7 @@ proc area {w h} {
 }
 ```
 
-## 13. Expression
+## Expression
 
 ```tcl
 expr
@@ -358,7 +366,9 @@ Always use
 expr {$a+$b}
 ```
 
-## 14. Useful Built in Math Functions
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Useful Built in Math Functions
 
 ```tcl
 abs()
@@ -381,7 +391,7 @@ hypot()
 fmod()
 ```
 
-## 15. Formatting
+## Formatting
 
 ``` tcl
 format
@@ -389,7 +399,9 @@ scan
 binary
 ```
 
-## 16. Time Commands
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Time Commands
 
 ``` tcl
 clock seconds
@@ -397,7 +409,7 @@ clock format
 clock clicks
 ```
 
-## 17. Information Commands
+## Information Commands
 
 ``` tcl
 info commands
@@ -409,7 +421,7 @@ info body
 info procs
 ```
 
-## 18. Namespace Commands
+## Namespace Commands
 
 ``` tcl
 namespace eval
@@ -417,22 +429,24 @@ namespace import
 namespace export
 ```
 
-## 19. Error Handling
+## Error Handling
 
 ``` tcl
 catch
 error
 try
 ```
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
 
-## 20. Package Commands
+## Package Commands
 
 ``` tcl
 package require
 package provide 
 source
 ```
-## 21. Report Parsing
+
+## Report Parsing
 
 ### Examples:
 
@@ -445,7 +459,7 @@ source
 * Parse IR drop reports
 * Parse EM reports
 
-## 22. Common Tcl Scripts in Physical Design
+## Common Tcl Scripts in Physical Design
 
 * Find worst slack
 * Count setup violations
@@ -465,7 +479,9 @@ source
 * Parse Innovus reports
 * Parse ICC2 reports
 
-## 23. Synopsys and Cadence Collection Commands
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Synopsys and Cadence Collection Commands
 
 ```tcl
 sizeof_collection
@@ -514,7 +530,9 @@ set count [sizeof_collection [get_cells *]]
 puts $count
 ```
 
-## 24. Most Used Physical Design Commands
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Most Used Physical Design Commands
 
 ```tcl
 get_cells
@@ -535,6 +553,7 @@ report_area
 all_fanout
 all_connected
 ```
+
 ## Attribute PD Examples
 
 ```tcl
@@ -542,7 +561,7 @@ get_attribute $cell ref_name
 get_attribute $cell area
 ```
 
-## 25. File Search Utilities
+## File Search Utilities
 
 ``` tcl
 glob file 
@@ -553,7 +572,9 @@ cd
 exec
 ```
 
-## 26. Linux Commands Used Inside Tcl
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Linux Commands Used Inside Tcl
 
 ``` tcl
 exec grep
@@ -573,7 +594,7 @@ exec tail
 exec grep slack timing.rpt
 ```
 
-## 27. Advanced Tcl
+## Advanced Tcl
 
 * Nested procedures
 * Recursion
@@ -584,7 +605,9 @@ exec grep slack timing.rpt
 * Variable scope
 * Namespaces
 
-## 28. General Programs
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## General Programs
 
 * Factorial
 * Prime numbers
@@ -603,7 +626,7 @@ exec grep slack timing.rpt
 * File parser
 * Report parser
 
-## 29. Physical Design Report Parsing Questions
+## Physical Design Report Parsing Questions
 
 * Find Worst Negative Slack (WNS)
 * Find Total Negative Slack (TNS)
@@ -621,7 +644,9 @@ exec grep slack timing.rpt
 * Find IR-drop violations
 * Find EM violations
 
-## 30. Tool Specific Tcl Knowledge
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
+
+## Tool Specific Tcl Knowledge
 
 For Synopsys tools (ICC2, PrimeTime, Fusion Compiler):
 
@@ -640,7 +665,7 @@ For Cadence tools (Innovus, Tempus):
 * Placement and routing automation
 * Timing and DRC report extraction
 
-## High Priority Topics for Physical Design
+## Very useful TCL Topics for Physical Design
 
 1. Variables, expressions, and operators
 2. Conditions and loops
@@ -654,3 +679,5 @@ For Cadence tools (Innovus, Tempus):
 10. Tool commands (`get_cells`, `get_pins`, `get_nets`, `report_timing`, `get_attribute`)
 11. Timing, DRC, and QoR automation scripts
 12. Practical report-parsing and debugging exercises
+
+⬆️ **Back to Top:** [Table of Contents](#table-of-contents)
