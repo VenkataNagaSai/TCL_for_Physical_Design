@@ -1,16 +1,44 @@
-# Lists and Arrays
+# TCL List in PD
 
 # Table of Contents
 
-- [Sort Numbers in a List](#sort-numbers-in-a-list)
-- [Find Maximum Number in a List](#find-maximum-number-in-a-list)
-- [Count Occurrences in a List](#count-occurrences-in-a-list)
-- [Remove Duplicates in a List](#remove-duplicates-in-a-list)
-- [Second Largest Number in a List](#second-largest-number-in-a-list)
-- [Reverse a List](#reverse-a-list)
-- [Find Common Elements in a List](#find-common-elements-in-a-list)
+## List Creation
 
-## Sort Numbers in a List
+```tcl
+set cells {U1 U2 U3}
+```
+
+## List Length
+
+```tcl
+llength $cells
+```
+
+## List Access Element
+
+```tcl
+lindex $cells 0
+```
+
+## List Append
+
+```tcl
+lappend cells U4
+```
+
+## List Search
+
+```tcl
+lsearch $cells U2
+```
+
+## List Sort
+
+```tcl
+lsort $cells
+```
+
+## Sort Integers or Numbers in a List
 
 ```tcl
 set nums {50 20 10 40 30}

@@ -1,28 +1,28 @@
-# TCL
+# TCL for Physical Design
 
 ## Table of Contents
 
-- [1. Tcl Basics](#1-tcl-basics)
+- [1. Tcl Introduction and Basics](#1-tcl-introduction-and-basics)
 - [2. Operators](#2-operators)
   - [Arithmetic](#arithmetic)
   - [Comparison](#comparison)
   - [Logical](#logical)
   - [Bitwise](#bitwise)
-  - [String operators](#string-operators)
-- [3. Conditional Statements](#3-conditional-statements)
-- [4. Loops](#4-loops)
+  - [String operator](#string-operator)
+- [3. Conditional Statement](#3-conditional-statement)
+- [4. Loop](#4-loop)
   - [for](#for)
   - [while](#while)
   - [foreach](#foreach)
 - [5. Loop Control](#5-loop-control)
-- [6. Lists](#6-lists)
-- [7. Arrays](#7-arrays)
-- [8. Dictionaries](#8-dictionaries)
-- [9. String Commands](#9-string-commands)
-- [10. Regular Expressions](#10-regular-expressions)
+- [6. String](#6-string)
+- [7. List](#7-list)
+- [8. Array](#8-array)
+- [9. Dictionary](#9-dictionary)
+- [10. Regular Expression](#10-regular-expression)
 - [11. File Handling](#11-file-handling)
-- [12. Procedures](#12-procedures)
-- [13. Expressions](#13-expressions)
+- [12. Procedure](#12-procedure)
+- [13. Expression](#13-expression)
 - [14. Useful Built in Math Functions](#14-useful-built-in-math-functions)
 - [15. Formatting](#15-formatting)
 - [16. Time Commands](#16-time-commands)
@@ -32,7 +32,7 @@
 - [20. Package Commands](#20-package-commands)
 - [21. Report Parsing](#21-report-parsing)
 - [22. Common Tcl Scripts in Physical Design](#22-common-tcl-scripts-in-physical-design)
-- [23. Synopsys Cadence Collection Commands](#23-synopsys-cadence-collection-commands)
+- [23. Synopsys and Cadence Collection Commands](#23-synopsys-and-cadence-collection-commands)
 - [24. Most Used Physical Design Commands](#24-most-used-physical-design-commands)
 - [25. File Search Utilities](#25-file-search-utilities)
 - [26. Linux Commands Used Inside Tcl](#26-linux-commands-used-inside-tcl)
@@ -42,9 +42,32 @@
 - [30. Tool Specific Tcl Knowledge](#30-tool-specific-tcl-knowledge)
 - [High Priority Topics for Physical Design](#high-priority-topics-for-physical-design)
 
-## 1. Tcl Basics
+## 1. Tcl Introduction and Basics
 
-* Variables (`set`, `unset`, `incr`)
+TCL is heavily used in many EDA tools like
+
+* Cadence Genus
+* Cadence Innovus
+* Cadence Tempus
+* Synopsys Design Compiler
+* Synopsys ICC2
+* Synopsys PrimeTime
+* Synopsys Fusion Compiler
+
+### Common applications
+
+* Timing report parsing
+* ECO automation
+* Collection handling
+* CTS automation
+* Placement checks
+* Routing checks
+* Design sanity checks
+* Batch automation
+
+### TCL Basics
+
+* Variables (`set`, `puts`, `unset`, `incr`)
 * Data types
 * Comments
 * Quoting (`""`, `{}`, `[]`)
@@ -54,7 +77,26 @@
 * Command substitution
 * Variable substitution
 
-### Example:
+### Variable Handling
+
+Used for: Storing slack, utilization, cell names, file names, etc.
+
+```tcl
+set var 10
+puts $var
+unset var
+incr var
+```
+
+### Command Substitution
+
+```tcl
+set count [llength $cells]
+```
+
+The command inside [ ] executes first.
+
+#### Example
 
 ```tcl
 set width 100
@@ -113,7 +155,9 @@ string compare
 string equal
 ```
 
-## 3. Conditional Statements
+## 3. Conditional Statement
+
+### if-elseif-else Statement
 
 ```tcl
 if {} {}
@@ -124,11 +168,31 @@ if {} {
 }
 ```
 
+### Switch Statement
+
+Syntax
+
 ``` tcl
-switch
+switch $var {
+"case1" {puts "print case1"} 
+"case2" {puts "print case2"}
+"case3" {puts "print case3"}
+default {puts "default body"}
 ```
 
-## 4. Loops
+Switch Statement Example
+
+``` tcl
+set a "banana"
+switch $a {
+"apple" {puts "apple is present"}
+"mango" {puts "mango is present"} 
+"banana" {puts "banana is present"}
+"default" {puts "no such fruit present"}
+}
+```
+
+## 4. Loop
 
 ### for
 
@@ -160,58 +224,7 @@ break
 continue
 return
 ```
-
-## 6. Lists
-
-Commands
-
-``` tcl
-list
-llength
-lindex
-linsert
-lappend
-lreplace
-lrange
-lsort
-lsearch
-join
-split
-concat
-```
-
-### PD Example
-
-```tcl
-set cells [get_cells *]
-foreach cell $cells {
-    puts $cell
-}
-```
-
-## 7. Arrays
-
-```tcl
-array set
-array get
-array names
-array exists
-array size
-array unset
-```
-
-## 8. Dictionaries
-
-``` tcl
-dict create
-dict get
-dict set
-dict exists
-dict keys
-dict values
-```
-
-## 9. String Commands
+## 6. String
 
 ``` tcl
 string length
@@ -228,13 +241,52 @@ string map
 string match
 ```
 
-
-### PD Example
+### String PD Example
 
 ```tcl
 string match "*DFF*" $cell
 ```
-## 10. Regular Expressions
+
+## 7. List
+
+``` tcl
+list
+llength
+lindex
+linsert
+lappend
+lreplace
+lrange
+lsort
+lsearch
+join
+split
+concat
+```
+
+## 8. Array
+
+```tcl
+array set
+array get
+array names
+array exists
+array size
+array unset
+```
+
+## 9. Dictionary
+
+``` tcl
+dict create
+dict get
+dict set
+dict exists
+dict keys
+dict values
+```
+
+## 10. Regular Expression
 
 ```tcl
 regexp
@@ -242,7 +294,7 @@ regsub
 ```
 Very important for report parsing.
 
-### Example
+### RegExp Example
 
 ```tcl
 regexp {slack\s+(-?\d+\.\d+)} $line
@@ -266,7 +318,7 @@ file delete
 file copy 
 file rename
 ```
-### Example
+### File Handling Example
 
 ```tcl
 set fp [open timing.rpt r]
@@ -276,7 +328,7 @@ while {[gets $fp line] >=0} {
 close $fp
 ```
 
-## 12. Procedures
+## 12. Procedure
 
 ```tcl
 proc
@@ -286,7 +338,7 @@ upvar
 uplevel
 ```
 
-### Example
+### Procedure Example
 
 ```tcl
 proc area {w h} {
@@ -294,7 +346,7 @@ proc area {w h} {
 }
 ```
 
-## 13. Expressions
+## 13. Expression
 
 ```tcl
 expr
@@ -413,7 +465,7 @@ source
 * Parse Innovus reports
 * Parse ICC2 reports
 
-## 23. Synopsys Cadence Collection Commands
+## 23. Synopsys and Cadence Collection Commands
 
 ```tcl
 sizeof_collection
@@ -425,14 +477,41 @@ index_collection
 sort_collection
 ```
 
+### Foreach in Collection Example
 
-### Example
+The main usecase of Foreach in Collection is to Iterate Collections.
 
 ```tcl
 set cells [get_cells *]
 foreach_in_collection c $cells {
     puts [get_object_name $c]
 }
+```
+Another way to represent Foreach in Collection 
+
+```tcl
+foreach_in_collection cell [get_cells *] {
+    puts $cell
+}
+```
+
+### Filter Collection Example
+
+Filtering Sequential Cells
+
+```tcl
+foreach_in_collection cell [get_cells -filter "is_sequential==true"] {
+    puts [get_object_name $cell]
+}
+```
+
+### Size of Collection Example
+
+To Count number of cells
+
+```tcl
+set count [sizeof_collection [get_cells *]]
+puts $count
 ```
 
 ## 24. Most Used Physical Design Commands
@@ -453,6 +532,14 @@ report_qor
 report_power
 report_clock
 report_area
+all_fanout
+all_connected
+```
+## Attribute PD Examples
+
+```tcl
+get_attribute $cell ref_name
+get_attribute $cell area
 ```
 
 ## 25. File Search Utilities
@@ -465,7 +552,6 @@ pwd
 cd 
 exec
 ```
-
 
 ## 26. Linux Commands Used Inside Tcl
 
@@ -481,14 +567,13 @@ exec wc
 exec head
 exec tail
 ```
-### Example
+### Exec PD Example
 
 ``` tcl
 exec grep slack timing.rpt
 ```
 
 ## 27. Advanced Tcl
-
 
 * Nested procedures
 * Recursion
