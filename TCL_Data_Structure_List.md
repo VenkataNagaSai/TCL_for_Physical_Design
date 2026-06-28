@@ -1,4 +1,4 @@
-# List in TCL
+# TCL Data Structure List
 
 # Table of Contents
 

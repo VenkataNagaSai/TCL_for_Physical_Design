@@ -1,4 +1,4 @@
-# PD TCL ECO Automation Scripts
+# PD TCL ECO Automation
 
 ## Generate TCL ECO
 

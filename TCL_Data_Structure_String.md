@@ -1,4 +1,4 @@
-# String in TCL
+# TCL Data Structure String
 
 # Table of Contents
 

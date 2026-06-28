@@ -1,4 +1,4 @@
-# General TCL Progamming Logics
+# TCL General Progamming Logics
 
 # Table of Contents
 

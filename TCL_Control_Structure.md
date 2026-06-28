@@ -1,14 +1,16 @@
-## Control Structure
+# TCL Control Structure
 
-### Conditional Statement
+## Conditional Statement
 
-#### if, elseif, else
+### if, elseif, else statement
 ```tcl
 ```
 
-### Loop
+### switch statement
 
-#### for Loop
+## Loop
+
+### for Loop
 
 ```tcl
 for {set i 1} {$i <= 10} {incr i} {
@@ -16,7 +18,7 @@ for {set i 1} {$i <= 10} {incr i} {
 }
 ```
 
-#### while Loop
+### while Loop
 
 ```tcl
 while {$count > 0} {
@@ -24,7 +26,7 @@ while {$count > 0} {
 }
 ```
 
-#### foreach Loop 
+### foreach Loop 
 
 
 ```tcl

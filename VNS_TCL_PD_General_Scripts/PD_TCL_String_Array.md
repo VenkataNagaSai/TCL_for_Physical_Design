@@ -1,4 +1,4 @@
-# TCL String in PD
+# PD TCL String
 
 Used for report parsing and object filtering.
 
@@ -8,7 +8,7 @@ string compare $a $b
 string match *CLK* $pin
 string first CLK $pin
 ```
-## String PD Example
+## PD String Example
 
 ```tcl
 if {[string match *clk* $pin]} {
@@ -16,11 +16,11 @@ if {[string match *clk* $pin]} {
 }
 ```
 
-# TCL Array in PD
+# PD TCL Array
 
 Also specified as Associative Arrays, used for storing timing data.
 
-## Array PD Example
+## PD Array Example
 
 ```tcl
 array set slack {

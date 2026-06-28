@@ -1,10 +1,10 @@
-# TCL Control Structure in PD
+# PD TCL Control Structure
 
 Used for: Timing checks, report filtering.
 
 ## Conditional Statement
 
-### if, elseif, else
+### if, elseif, else statement
 
 ```tcl
 if {$slack < 0} {
@@ -15,6 +15,8 @@ if {$slack < 0} {
     puts "Clean"
 }
 ```
+
+### switch statement
 
 ## Loop
 
@@ -44,11 +46,11 @@ foreach cell $cell_list {
 }
 ```
 
-Instead of simple we mainly use foreach_in_collection loop.
+Instead of simple foreach we mainly use foreach_in_collection loop.
 
 The main usecase of Foreach in Collection is to Iterate Collections.
 
-#### Foreach in Collection Example
+#### Foreach in Collection Examples
 
 ```tcl
 set cells [get_cells *]
@@ -64,9 +66,7 @@ foreach_in_collection cell [get_cells *] {
 }
 ```
 
-### Filter Collection Example
-
-Filtering Sequential Cells
+#### Filtering Sequential Cells
 
 ```tcl
 foreach_in_collection cell [get_cells -filter "is_sequential==true"] {
@@ -85,7 +85,7 @@ foreach_in_collection net [get_nets *] {
 }
 ```
 
-### Floating Nets
+#### Floating Nets
 
 ```tcl
 foreach_in_collection net [get_nets *] {
@@ -95,7 +95,7 @@ foreach_in_collection net [get_nets *] {
 }
 ```
 
-### Unconnected Ports
+#### Unconnected Ports
 
 ```tcl
 foreach_in_collection port [get_ports *] {

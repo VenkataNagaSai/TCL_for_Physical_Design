@@ -1,8 +1,8 @@
-## TCL Operators in PD
+# PD TCL Operator
 
 Used for Area calculations, percentages, coordinates.
 
-### Arithmetic Operators
+## Arithmetic Operators
 
 | Operator | Description    | Example |
 | -------- | -------------- | ------- |
@@ -21,7 +21,7 @@ set area [expr {$width * $height}]
 puts $area
 ```
 
-### Relational Operators
+## Relational Operators
 
 Used in if, while, and filtering conditions.
 
@@ -40,7 +40,7 @@ if {$slack < 0} {
 }
 ```
 
-### Logical Operators
+## Logical Operators
 
 | Operator | Description |
 | -------- | ----------- |
@@ -54,7 +54,7 @@ if {$setup_slack < 0 && $hold_slack < 0} {
 }
 ```
 
-### String Comparision Operators
+## String Comparision Operators
 
 | Operator | Description |
 | -------- | ----------- |
@@ -72,7 +72,7 @@ Preferred Over:
 if {$cell_type == "BUF"} ;# Avoid
 ```
 
-### Membership Operators
+## Membership Operators
 
 ### in
 
@@ -89,7 +89,7 @@ if {$pin_name ni {"clk" "rst"}} {
 }
 ```
 
-### Ternary Operator
+## Ternary Operator
 
 Useful for compact conditions.
 
